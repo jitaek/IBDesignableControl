@@ -10,6 +10,16 @@ import UIKit
 
 public class CVZGradientControl: IBDesignableControl {
 
+    public enum ButtonStyle: Int {
+        case `default`
+        case outline
+    }
+    
+    public enum GradientDirection: Int {
+        case horizontal
+        case vertical
+    }
+    
     @IBInspectable public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -23,6 +33,7 @@ public class CVZGradientControl: IBDesignableControl {
     @IBInspectable public var text: String? {
         didSet {
             titleLabel.text = text
+            setNeedsLayout()
         }
     }
     
@@ -74,9 +85,17 @@ public class CVZGradientControl: IBDesignableControl {
         }
     }
     
+    public var gradientDirection: GradientDirection = .horizontal {
+        didSet {
+//            updateStyle()
+        }
+    }
+    
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabelContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
     public override var intrinsicContentSize: CGSize {
@@ -89,7 +108,57 @@ public class CVZGradientControl: IBDesignableControl {
         }
     }
     
+    internal var outlineWidth: CGFloat {
+        return 2.0
+    }
+    
+    private var outlinePath: UIBezierPath {
+        let outlineRect: CGRect = bounds.insetBy(dx: outlineWidth, dy: outlineWidth)
+        let cornerRadius: CGFloat = self.cornerRadius == 0 ? (outlineRect.size.height / 2.0) : 0.0
+        return UIBezierPath(roundedRect: outlineRect, cornerRadius: cornerRadius)
+    }
+    
+    private let outlineLayer: CAShapeLayer = {
+        let outlineLayer: CAShapeLayer = .init()
+        outlineLayer.strokeColor = UIColor.black.cgColor
+        outlineLayer.fillColor = UIColor.clear.cgColor
+        return outlineLayer
+    }()
+    
+    private let gradientLayer: CAGradientLayer = {
+        let gradientLayer: CAGradientLayer = .init()
+        gradientLayer.masksToBounds = true
+        gradientLayer.needsDisplayOnBoundsChange = true
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        return gradientLayer
+    }()
+    
+    private let textGradientLayer: CAGradientLayer = {
+        let textGradientLayer: CAGradientLayer = .init()
+        textGradientLayer.masksToBounds = true
+        textGradientLayer.needsDisplayOnBoundsChange = true
+        textGradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        textGradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        return textGradientLayer
+    }()
+    
+    public var gradient: Gradient = OrangeGradient {
+        didSet {
+//            updateStyle()
+        }
+    }
+    
+    public var style: ButtonStyle = .default {
+        didSet {
+//            updateButtonStyle()
+        }
+    }
+    
     public override func setupViews() {
+        style = .outline
+        clipsToBounds = false
+
         layer.cornerRadius = cornerRadius
         titleLabel.text = text
         titleLabel.textColor = textColor
@@ -97,11 +166,62 @@ public class CVZGradientControl: IBDesignableControl {
         if !isLeftImagePosition {
             stackView.addArrangedSubview(imageContainerView)
         }
+        configureGradient()
+        restyleGradient()
+        updateButtonStyle()
+        titleLabelContainerView.layer.mask = titleLabel.layer
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
         cornerRadius = self.cornerRadius == 0 ? bounds.size.height / 2.0 : 0.0
+        textGradientLayer.frame = titleLabelContainerView.bounds
+
+        CATransaction.commit()
+        updateButtonStyle()
+    }
+    
+    private func configureGradient() {
+        restyleGradient()
+        textGradientLayer.frame = titleLabelContainerView.bounds
+        titleLabelContainerView.layer.addSublayer(textGradientLayer)
+    }
+    
+    private func restyleGradient() {
+        let startPoint: CGPoint
+        let endPoint: CGPoint
+        switch gradientDirection {
+        case .horizontal:
+            startPoint = CGPoint(x: 0.0, y: 0.5)
+            endPoint = CGPoint(x: 1.0, y: 0.5)
+        case .vertical:
+            startPoint = CGPoint(x: 0.5, y: 0.0)
+            endPoint = CGPoint(x: 0.5, y: 1.0)
+        }
+        
+        gradientLayer.colors = gradient.colors
+        gradientLayer.locations = gradient.locations
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        
+        textGradientLayer.colors = gradient.colors
+        textGradientLayer.locations = gradient.locations
+        textGradientLayer.startPoint = startPoint
+        textGradientLayer.endPoint = endPoint
     }
 
+    private func updateButtonStyle() {
+        switch style {
+        case .default:
+            outlineLayer.path = nil
+            gradientLayer.mask = nil
+            textGradientLayer.mask = nil
+        case .outline:
+            outlineLayer.lineWidth = outlineWidth
+            outlineLayer.path = outlinePath.cgPath
+            gradientView.alpha = 0
+        }
+    }
 }
