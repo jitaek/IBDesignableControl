@@ -12,6 +12,10 @@
 		0436649D2272E958003AF51C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0436649B2272E958003AF51C /* Main.storyboard */; };
 		0436649F2272E959003AF51C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0436649E2272E959003AF51C /* Assets.xcassets */; };
 		043664A22272E959003AF51C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043664A02272E959003AF51C /* LaunchScreen.storyboard */; };
+		043664AB2272E967003AF51C /* CVZGradientControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043664A92272E967003AF51C /* CVZGradientControl.swift */; };
+		043664AC2272E967003AF51C /* CVZGradientControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043664AA2272E967003AF51C /* CVZGradientControl.xib */; };
+		043664AF2272E978003AF51C /* IBDesignableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043664AD2272E978003AF51C /* IBDesignableControl.swift */; };
+		043664B02272E978003AF51C /* IBDesignableControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043664AE2272E978003AF51C /* IBDesignableControl.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		0436649E2272E959003AF51C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043664A12272E959003AF51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043664A32272E959003AF51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043664A92272E967003AF51C /* CVZGradientControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVZGradientControl.swift; sourceTree = "<group>"; };
+		043664AA2272E967003AF51C /* CVZGradientControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVZGradientControl.xib; sourceTree = "<group>"; };
+		043664AD2272E978003AF51C /* IBDesignableControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableControl.swift; sourceTree = "<group>"; };
+		043664AE2272E978003AF51C /* IBDesignableControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBDesignableControl.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				043664972272E958003AF51C /* AppDelegate.swift */,
 				043664992272E958003AF51C /* ViewController.swift */,
+				043664A92272E967003AF51C /* CVZGradientControl.swift */,
+				043664AA2272E967003AF51C /* CVZGradientControl.xib */,
+				043664AD2272E978003AF51C /* IBDesignableControl.swift */,
+				043664AE2272E978003AF51C /* IBDesignableControl.xib */,
 				0436649B2272E958003AF51C /* Main.storyboard */,
 				0436649E2272E959003AF51C /* Assets.xcassets */,
 				043664A02272E959003AF51C /* LaunchScreen.storyboard */,
@@ -122,7 +134,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				043664A22272E959003AF51C /* LaunchScreen.storyboard in Resources */,
+				043664AC2272E967003AF51C /* CVZGradientControl.xib in Resources */,
 				0436649F2272E959003AF51C /* Assets.xcassets in Resources */,
+				043664B02272E978003AF51C /* IBDesignableControl.xib in Resources */,
 				0436649D2272E958003AF51C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0436649A2272E958003AF51C /* ViewController.swift in Sources */,
+				043664AB2272E967003AF51C /* CVZGradientControl.swift in Sources */,
+				043664AF2272E978003AF51C /* IBDesignableControl.swift in Sources */,
 				043664982272E958003AF51C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NP653TDUD;
 				INFOPLIST_FILE = IBDesignableControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NP653TDUD;
 				INFOPLIST_FILE = IBDesignableControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
