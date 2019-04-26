@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcw-Vm-GE7" customClass="GradientView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcw-Vm-GE7" customClass="CVZGradientView" customModule="IBDesignableControl" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>

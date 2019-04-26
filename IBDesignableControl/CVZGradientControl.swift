@@ -156,7 +156,7 @@ public class CVZGradientControl: IBDesignableControl {
     }
     
     public override func setupViews() {
-        style = .outline
+//        style = .outline
         clipsToBounds = false
 
         layer.cornerRadius = cornerRadius
@@ -169,7 +169,6 @@ public class CVZGradientControl: IBDesignableControl {
         configureGradient()
         restyleGradient()
         updateButtonStyle()
-        titleLabelContainerView.layer.mask = titleLabel.layer
     }
     
     public override func layoutSubviews() {
@@ -178,15 +177,12 @@ public class CVZGradientControl: IBDesignableControl {
         CATransaction.setDisableActions(true)
         cornerRadius = self.cornerRadius == 0 ? bounds.size.height / 2.0 : 0.0
         textGradientLayer.frame = titleLabelContainerView.bounds
-
         CATransaction.commit()
         updateButtonStyle()
     }
     
     private func configureGradient() {
         restyleGradient()
-        textGradientLayer.frame = titleLabelContainerView.bounds
-        titleLabelContainerView.layer.addSublayer(textGradientLayer)
     }
     
     private func restyleGradient() {
@@ -218,10 +214,18 @@ public class CVZGradientControl: IBDesignableControl {
             outlineLayer.path = nil
             gradientLayer.mask = nil
             textGradientLayer.mask = nil
+            gradientView.alpha = 1
+            titleLabelContainerView.layer.mask = nil
+            textGradientLayer.removeFromSuperlayer()
         case .outline:
+            if textGradientLayer.superlayer == nil {
+                titleLabelContainerView.layer.addSublayer(textGradientLayer)
+                textGradientLayer.frame = titleLabelContainerView.bounds
+            }
             outlineLayer.lineWidth = outlineWidth
             outlineLayer.path = outlinePath.cgPath
             gradientView.alpha = 0
+            titleLabelContainerView.layer.mask = titleLabel.layer
         }
     }
 }
