@@ -22,6 +22,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7wN-rh-eIJ"/>
+                                    <constraint firstAttribute="width" constant="169.5" id="Zyk-z4-4mV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="testingsdfgsdfgf"/>
@@ -32,25 +33,11 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isLeftImagePosition" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1to-gC-8qB">
-                                <rect key="frame" x="172.5" y="372" width="69" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="pz7-dk-2Im"/>
-                                </constraints>
-                                <state key="normal" title="Testing" image="chevron-large"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v66-yc-gFj" customClass="CVZGradientButton">
-                                <rect key="frame" x="184" y="521" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
-                            <constraint firstItem="1to-gC-8qB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="51v-l7-DU0"/>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jtj-fl-UqX"/>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g4y-KX-EQx"/>
-                            <constraint firstItem="0bK-h1-lHl" firstAttribute="top" secondItem="1to-gC-8qB" secondAttribute="bottom" constant="29" id="nya-H9-T5o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -60,6 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="101.78571428571428"/>
         </scene>
     </scenes>
     <resources>

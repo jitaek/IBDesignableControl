@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let anotherControl = CVZGradientControl()
+        view.addSubview(anotherControl)
+        anotherControl.translatesAutoresizingMaskIntoConstraints = false
+        anotherControl.text = "HALLO"
+        anotherControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        anotherControl.topAnchor.constraint(equalTo: control.bottomAnchor, constant: 50).isActive = true
     }
 
 

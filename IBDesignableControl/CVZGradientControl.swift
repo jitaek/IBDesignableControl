@@ -73,7 +73,7 @@ public class CVZGradientControl: IBDesignableControl {
     
     @IBInspectable public var image: UIImage? {
         didSet {
-            imageView.image = image
+            updateImage()
         }
     }
     
@@ -85,11 +85,7 @@ public class CVZGradientControl: IBDesignableControl {
         }
     }
     
-    public var gradientDirection: GradientDirection = .horizontal {
-        didSet {
-//            updateStyle()
-        }
-    }
+    public var gradientDirection: GradientDirection = .horizontal
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var gradientView: UIView!
@@ -145,24 +141,22 @@ public class CVZGradientControl: IBDesignableControl {
     
     public var gradient: Gradient = OrangeGradient {
         didSet {
-//            updateStyle()
+            restyleGradient()
         }
     }
     
     public var style: ButtonStyle = .default {
         didSet {
-//            updateButtonStyle()
+            updateButtonStyle()
         }
     }
-    
+        
     public override func setupViews() {
-//        style = .outline
         clipsToBounds = false
-
         layer.cornerRadius = cornerRadius
         titleLabel.text = text
         titleLabel.textColor = textColor
-        imageView.image = image
+        updateImage()
         if !isLeftImagePosition {
             stackView.addArrangedSubview(imageContainerView)
         }
@@ -206,6 +200,11 @@ public class CVZGradientControl: IBDesignableControl {
         textGradientLayer.locations = gradient.locations
         textGradientLayer.startPoint = startPoint
         textGradientLayer.endPoint = endPoint
+    }
+    
+    private func updateImage() {
+        imageView.image = image
+        imageContainerView.isHidden = image == nil
     }
 
     private func updateButtonStyle() {
