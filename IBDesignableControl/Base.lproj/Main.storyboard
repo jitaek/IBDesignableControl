@@ -35,7 +35,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-Kq-fPS" customClass="CVZGradientButton" customModule="IBDesignableControl" customModuleProvider="target">
-                                <rect key="frame" x="155.5" y="336" width="103" height="30"/>
+                                <rect key="frame" x="122.5" y="316" width="169.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HLv-3s-2j1"/>
+                                </constraints>
                                 <state key="normal" title="testinglongtext"/>
                             </button>
                         </subviews>
@@ -43,8 +46,10 @@
                         <constraints>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="top" secondItem="6MU-Kq-fPS" secondAttribute="bottom" constant="57" id="IN5-iz-gM0"/>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jtj-fl-UqX"/>
+                            <constraint firstItem="6MU-Kq-fPS" firstAttribute="trailing" secondItem="0bK-h1-lHl" secondAttribute="trailing" id="bf9-M2-zig"/>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g4y-KX-EQx"/>
                             <constraint firstItem="6MU-Kq-fPS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pZc-mR-Prx"/>
+                            <constraint firstItem="6MU-Kq-fPS" firstAttribute="leading" secondItem="0bK-h1-lHl" secondAttribute="leading" id="vk0-Jt-GAy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

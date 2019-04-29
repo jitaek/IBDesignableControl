@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         control.startLoading()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.control.finishLoading()
+            self.cvzGradientButton.finishLoading()
         }
     }
 

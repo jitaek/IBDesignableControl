@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="vGL-iG-w6x" id="uSW-id-X0g"/>
                 <outlet property="gradientView" destination="Jcw-Vm-GE7" id="xMc-Du-OHb"/>
+                <outlet property="highlightView" destination="ZyG-6O-th6" id="Fym-Pt-pbb"/>
                 <outlet property="imageContainerView" destination="Xkl-ZQ-r4j" id="JsW-fx-RU4"/>
                 <outlet property="imageView" destination="kbs-El-XI7" id="x7Y-0K-wh8"/>
                 <outlet property="stackView" destination="FRz-UJ-A0j" id="dBD-pq-fFY"/>
@@ -76,6 +77,10 @@
                         </view>
                     </subviews>
                 </stackView>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-6O-th6">
+                    <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-iG-w6x">
                     <rect key="frame" x="63.5" y="10" width="20" height="20"/>
                 </activityIndicatorView>
@@ -86,12 +91,16 @@
                 <constraint firstItem="vGL-iG-w6x" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2Ye-0x-FIe"/>
                 <constraint firstItem="Jcw-Vm-GE7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Vs-4C-gN9"/>
                 <constraint firstItem="vGL-iG-w6x" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BuX-pt-hou"/>
+                <constraint firstAttribute="bottom" secondItem="ZyG-6O-th6" secondAttribute="bottom" id="NOm-eA-rvB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FRz-UJ-A0j" secondAttribute="bottom" id="P92-pk-pNk"/>
+                <constraint firstItem="ZyG-6O-th6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xff-eU-X9Y"/>
                 <constraint firstAttribute="trailing" secondItem="Jcw-Vm-GE7" secondAttribute="trailing" id="a93-r9-Qma"/>
+                <constraint firstAttribute="trailing" secondItem="ZyG-6O-th6" secondAttribute="trailing" id="dwc-WM-qWc"/>
                 <constraint firstItem="FRz-UJ-A0j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="g8f-lx-OB7"/>
                 <constraint firstAttribute="bottom" secondItem="Jcw-Vm-GE7" secondAttribute="bottom" id="gcG-dB-yEw"/>
                 <constraint firstItem="FRz-UJ-A0j" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oBh-2w-dta"/>
                 <constraint firstItem="Jcw-Vm-GE7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="smW-XR-wxl"/>
+                <constraint firstItem="ZyG-6O-th6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yE8-qe-gXb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

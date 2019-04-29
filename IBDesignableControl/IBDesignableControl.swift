@@ -45,17 +45,6 @@ open class IBDesignableControl: UIControl {
         
     }
     
-    open override var isHighlighted: Bool {
-        didSet {
-            if isHighlighted {
-                alpha = 0.3
-            }
-            else {
-                alpha = 1
-            }
-        }
-    }
-    
     // Override this to provide finishing touches to view
     open func setupViews() {
         

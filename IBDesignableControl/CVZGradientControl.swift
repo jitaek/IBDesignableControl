@@ -93,6 +93,7 @@ public class CVZGradientControl: IBDesignableControl {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabelContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var highlightView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var isAnimating: Bool = false
@@ -105,6 +106,12 @@ public class CVZGradientControl: IBDesignableControl {
     public override var isEnabled: Bool {
         didSet {
             alpha = isEnabled ? 1.0 : 0.5
+        }
+    }
+    
+    public override var isHighlighted: Bool {
+        didSet {
+            highlightView.alpha = isHighlighted ? 0.3 : 0.0
         }
     }
     
