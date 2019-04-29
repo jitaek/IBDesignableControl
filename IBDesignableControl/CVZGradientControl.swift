@@ -85,6 +85,16 @@ public class CVZGradientControl: IBDesignableControl {
         }
     }
     
+    public var imagePadding: CGFloat = 0 {
+        didSet {
+            stackViewLeadingConstraint.constant = imagePadding
+            stackViewTrailingConstraint.constant = imagePadding
+            layoutIfNeeded()
+        }
+    }
+    @IBOutlet weak var stackViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stackViewTrailingConstraint: NSLayoutConstraint!
+    
     public var gradientDirection: GradientDirection = .horizontal
     
     @IBOutlet weak var stackView: UIStackView!

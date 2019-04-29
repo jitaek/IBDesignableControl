@@ -23,6 +23,8 @@
                 <outlet property="imageContainerView" destination="Xkl-ZQ-r4j" id="JsW-fx-RU4"/>
                 <outlet property="imageView" destination="kbs-El-XI7" id="x7Y-0K-wh8"/>
                 <outlet property="stackView" destination="FRz-UJ-A0j" id="dBD-pq-fFY"/>
+                <outlet property="stackViewLeadingConstraint" destination="g8f-lx-OB7" id="6V5-92-OZQ"/>
+                <outlet property="stackViewTrailingConstraint" destination="0cj-TW-qwk" id="3G9-qK-fKj"/>
                 <outlet property="titleLabel" destination="Ybo-9j-2pk" id="oIa-Uf-Q3f"/>
                 <outlet property="titleLabelContainerView" destination="byM-JH-z5x" id="8o9-Qs-hO6"/>
             </connections>
