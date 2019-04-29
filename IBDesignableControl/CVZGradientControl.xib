@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CVZGradientControl" customModule="IBDesignableControl" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="vGL-iG-w6x" id="uSW-id-X0g"/>
                 <outlet property="gradientView" destination="Jcw-Vm-GE7" id="xMc-Du-OHb"/>
                 <outlet property="imageContainerView" destination="Xkl-ZQ-r4j" id="JsW-fx-RU4"/>
                 <outlet property="imageView" destination="kbs-El-XI7" id="x7Y-0K-wh8"/>
@@ -74,11 +76,16 @@
                         </view>
                     </subviews>
                 </stackView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-iG-w6x">
+                    <rect key="frame" x="63.5" y="10" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FRz-UJ-A0j" secondAttribute="trailing" constant="16" id="0cj-TW-qwk"/>
+                <constraint firstItem="vGL-iG-w6x" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2Ye-0x-FIe"/>
                 <constraint firstItem="Jcw-Vm-GE7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Vs-4C-gN9"/>
+                <constraint firstItem="vGL-iG-w6x" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BuX-pt-hou"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FRz-UJ-A0j" secondAttribute="bottom" id="P92-pk-pNk"/>
                 <constraint firstAttribute="trailing" secondItem="Jcw-Vm-GE7" secondAttribute="trailing" id="a93-r9-Qma"/>
                 <constraint firstItem="FRz-UJ-A0j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="g8f-lx-OB7"/>

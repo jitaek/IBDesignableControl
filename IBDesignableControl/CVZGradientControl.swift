@@ -93,6 +93,7 @@ public class CVZGradientControl: IBDesignableControl {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabelContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var isAnimating: Bool = false
     private var animationDelay: TimeInterval = 0.0
@@ -153,6 +154,10 @@ public class CVZGradientControl: IBDesignableControl {
             updateButtonStyle()
         }
     }
+    
+    public var isLoading: Bool {
+        return activityIndicator.isAnimating
+    }
         
     public override func setupViews() {
         clipsToBounds = false
@@ -166,7 +171,6 @@ public class CVZGradientControl: IBDesignableControl {
         configureGradient()
         restyleGradient()
         updateButtonStyle()
-        startAnimating()
     }
     
     public override func layoutSubviews() {
@@ -230,6 +234,22 @@ public class CVZGradientControl: IBDesignableControl {
             gradientView.alpha = 0
             titleLabelContainerView.layer.mask = titleLabel.layer
         }
+    }
+    
+    // MARK: Activity Indicator
+    
+    public func startLoading() {
+        guard !isLoading else { return }
+        isEnabled = false
+        stackView.isHidden = true
+        activityIndicator.startAnimating()
+    }
+    
+    public func finishLoading() {
+        guard isLoading else { return }
+        activityIndicator.stopAnimating()
+        stackView.isHidden = false
+        isEnabled = true
     }
     
     // MARK: Heartbeat Animation

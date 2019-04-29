@@ -24,6 +24,10 @@ class ViewController: UIViewController {
         cvzGradientButton.setImage(UIImage(named: "chevron-large"), for: .normal)
 //        cvzGradientButton.startAnimating()
         cvzGradientButton.startLoading()
+        control.startLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.control.finishLoading()
+        }
     }
 
 
