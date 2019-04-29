@@ -94,6 +94,9 @@ public class CVZGradientControl: IBDesignableControl {
     @IBOutlet weak var titleLabelContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    private var isAnimating: Bool = false
+    private var animationDelay: TimeInterval = 0.0
+
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: 100.0, height: 40.0)
     }
@@ -163,6 +166,7 @@ public class CVZGradientControl: IBDesignableControl {
         configureGradient()
         restyleGradient()
         updateButtonStyle()
+        startAnimating()
     }
     
     public override func layoutSubviews() {
@@ -227,4 +231,46 @@ public class CVZGradientControl: IBDesignableControl {
             titleLabelContainerView.layer.mask = titleLabel.layer
         }
     }
+    
+    // MARK: Heartbeat Animation
+    
+    public func startAnimating() {
+        guard !isAnimating else { return }
+        isAnimating = true
+        animation1()
+        animationDelay = 1.5
+    }
+    
+    public func stopAnimating() {
+        guard isAnimating else { return }
+        isAnimating = false
+        animationDelay = 0.0
+    }
+    
+    private func animation1() {
+        guard isAnimating else { return }
+        UIView.animate(withDuration: 0.25, delay: animationDelay, curve: .easeOut, options: [.allowUserInteraction], animations: {
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }, completion: animation2)
+    }
+    
+    private func animation2() {
+        UIView.animate(withDuration: 0.25, delay: 0.0, curve: .easeOut, options: [.allowUserInteraction], animations: {
+            self.transform = .identity
+        }, completion: animation3)
+    }
+    
+    private func animation3() {
+        guard isAnimating else { return }
+        UIView.animate(withDuration: 0.25, delay: 0.0, curve: .easeOut, options: [.allowUserInteraction], animations: {
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }, completion: animation4)
+    }
+    
+    private func animation4() {
+        UIView.animate(withDuration: 0.25, delay: 0.0, curve: .easeOut, options: [.allowUserInteraction], animations: {
+            self.transform = .identity
+        }, completion: animation1)
+    }
+    
 }

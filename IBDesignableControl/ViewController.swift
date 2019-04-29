@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var control: CVZGradientControl!
+    @IBOutlet weak var cvzGradientButton: CVZGradientButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +18,12 @@ class ViewController: UIViewController {
         let anotherControl = CVZGradientControl()
         view.addSubview(anotherControl)
         anotherControl.translatesAutoresizingMaskIntoConstraints = false
-        anotherControl.text = "HALLO"
+        anotherControl.text = "testinglongtext"
         anotherControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         anotherControl.topAnchor.constraint(equalTo: control.bottomAnchor, constant: 50).isActive = true
+        cvzGradientButton.setImage(UIImage(named: "chevron-large"), for: .normal)
+//        cvzGradientButton.startAnimating()
+        cvzGradientButton.startLoading()
     }
 
 

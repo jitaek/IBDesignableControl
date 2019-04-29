@@ -16,6 +16,7 @@
 		043664AC2272E967003AF51C /* CVZGradientControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043664AA2272E967003AF51C /* CVZGradientControl.xib */; };
 		043664AF2272E978003AF51C /* IBDesignableControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043664AD2272E978003AF51C /* IBDesignableControl.swift */; };
 		043664B02272E978003AF51C /* IBDesignableControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043664AE2272E978003AF51C /* IBDesignableControl.xib */; };
+		1095A78B2277621C000A7196 /* CVZGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1095A78A2277621C000A7196 /* CVZGradientButton.swift */; };
 		10B3E9AC22736B7E0026925C /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3E9AB22736B7E0026925C /* Gradient.swift */; };
 		10B3E9B022738F3C0026925C /* CVZGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3E9AF22738F3C0026925C /* CVZGradientView.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		043664AA2272E967003AF51C /* CVZGradientControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CVZGradientControl.xib; sourceTree = "<group>"; };
 		043664AD2272E978003AF51C /* IBDesignableControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableControl.swift; sourceTree = "<group>"; };
 		043664AE2272E978003AF51C /* IBDesignableControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBDesignableControl.xib; sourceTree = "<group>"; };
+		1095A78A2277621C000A7196 /* CVZGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVZGradientButton.swift; sourceTree = "<group>"; };
 		10B3E9AB22736B7E0026925C /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		10B3E9AF22738F3C0026925C /* CVZGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVZGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 				043664AE2272E978003AF51C /* IBDesignableControl.xib */,
 				10B3E9AB22736B7E0026925C /* Gradient.swift */,
 				10B3E9AF22738F3C0026925C /* CVZGradientView.swift */,
+				1095A78A2277621C000A7196 /* CVZGradientButton.swift */,
 				0436649B2272E958003AF51C /* Main.storyboard */,
 				0436649E2272E959003AF51C /* Assets.xcassets */,
 				043664A02272E959003AF51C /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 				10B3E9AC22736B7E0026925C /* Gradient.swift in Sources */,
 				0436649A2272E958003AF51C /* ViewController.swift in Sources */,
 				043664AB2272E967003AF51C /* CVZGradientControl.swift in Sources */,
+				1095A78B2277621C000A7196 /* CVZGradientButton.swift in Sources */,
 				043664AF2272E978003AF51C /* IBDesignableControl.swift in Sources */,
 				10B3E9B022738F3C0026925C /* CVZGradientView.swift in Sources */,
 				043664982272E958003AF51C /* AppDelegate.swift in Sources */,

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="169.5" id="Zyk-z4-4mV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="testingsdfgsdfgf"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="testinglongtext"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="chevron-large"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,16 +34,23 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isLeftImagePosition" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-Kq-fPS" customClass="CVZGradientButton" customModule="IBDesignableControl" customModuleProvider="target">
+                                <rect key="frame" x="155.5" y="336" width="103" height="30"/>
+                                <state key="normal" title="testinglongtext"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
+                            <constraint firstItem="0bK-h1-lHl" firstAttribute="top" secondItem="6MU-Kq-fPS" secondAttribute="bottom" constant="57" id="IN5-iz-gM0"/>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jtj-fl-UqX"/>
                             <constraint firstItem="0bK-h1-lHl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g4y-KX-EQx"/>
+                            <constraint firstItem="6MU-Kq-fPS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pZc-mR-Prx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="control" destination="0bK-h1-lHl" id="VPr-nw-NKW"/>
+                        <outlet property="cvzGradientButton" destination="6MU-Kq-fPS" id="G6R-aj-Pqj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
